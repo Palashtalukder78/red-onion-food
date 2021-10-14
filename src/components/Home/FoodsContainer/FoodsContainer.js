@@ -1,16 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container, Button } from 'react-bootstrap';
-import Food from '../Food/Food';
 import './FoodsContainer.css';
 import { NavLink, Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Breakfast from '../Breakfast/Breakfast';
 import Launch from '../Launch/Launch';
 import Dinner from '../Dinner/Dinner';
-import { FoodContext } from '../Home/Home';
 
 const FoodsContainer = () => {
-    const [foods] = useContext(FoodContext);
-    const randomFoods = foods.filter(food => food.category === 'launch');
     return (
         <div id="foodsContainer">
             <div className="foods-category text-center">
@@ -30,6 +26,9 @@ const FoodsContainer = () => {
                         }} to="/dinner"><span>Dinner</span></NavLink>
                     </div>
                     <Switch>
+                        <Route exact path="/">
+                            <Breakfast></Breakfast>
+                        </Route>
                         <Route path="/breakfast">
                             <Breakfast></Breakfast>
                         </Route>
@@ -44,12 +43,7 @@ const FoodsContainer = () => {
             </div>
             <Container>
                 <div className="row my-2">
-                    {
-                        randomFoods.map(food => <Food
-                            key={food.id}
-                            food={food}
-                        ></Food>)
-                    }
+
                 </div>
                 <div className="text-center">
                     <Button variant="secondary">Checkout Your Foods</Button>

@@ -4,9 +4,10 @@ import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
+import FoodProvider from './contexts/FoodProvider';
 function App() {
   return (
-    <div>
+    <FoodProvider>
       <Router>
         <Header />
         <Switch>
@@ -22,7 +23,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    </div>
+    </FoodProvider>
   );
 }
 

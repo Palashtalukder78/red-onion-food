@@ -1,15 +1,18 @@
-import React, { useContext } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
+import useFood from '../../../hooks/useFood';
 import Food from '../Food/Food';
-import { FoodContext } from '../Home/Home';
 
 const Launch = () => {
-    const [foods] = useContext(FoodContext);
+    const { foods } = useFood();
     const launches = foods.filter(food => food.category === 'launch');
     return (
         <Container>
             <div className="row">
-                {
+                {launches.length <= 0 ?
+                    <div className="text-center">
+                        <Spinner animation="grow" variant="secondary" />
+                    </div>
+                    :
                     launches.map(food => <Food
                         key={food.id}
                         food={food}
