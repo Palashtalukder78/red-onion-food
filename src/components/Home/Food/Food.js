@@ -2,7 +2,7 @@ import React from 'react';
 import './Food.css';
 
 const Food = ({ food }) => {
-    const { category, name, description, photo, price } = food;
+    const { name, description, photo, price } = food;
     return (
         <div className="col-md-4">
             <div className="card food-item my-2">

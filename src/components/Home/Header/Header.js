@@ -21,9 +21,8 @@ const Header = () => {
                                 fontWeight: "bold",
                                 color: "black"
                             }} to="/cart">
-                                <i class="fas fa-cart-plus"></i>
+                                <i className="fas fa-cart-plus"></i>
                             </NavLink>
-
                             <NavLink className="menu" activeStyle={{
                                 fontWeight: "bold",
                                 color: "black"
@@ -54,7 +53,7 @@ const Header = () => {
                                 fontWeight: "bold",
                                 color: "black"
                             }} to="/cart">
-                                <i class="fas fa-cart-plus"></i>
+                                <i className="fas fa-cart-plus"></i>
                             </NavLink>
 
                             <NavLink className="menu" activeStyle={{

@@ -1,0 +1,23 @@
+.footer-menu{
+    margin: 0 8px;
+    color: gray;
+    text-decoration: none;
+}
+.contact-info{
+    display: flex;
+    align-items: center;
+}
+.contact-info i{
+    background-color: rgb(51, 92, 5);
+    font-size: 20px;
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 50%;
+}
+.mini-header{
+    background-color: rgb(0, 0, 22);
+}
+.mini-header span{
+    color: rgb(206, 206, 216);
+
+}

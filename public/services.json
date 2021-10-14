@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Fast Delivery",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nemo pariatur assumenda architecto explicabo?",
+        "photo": "https://i.ibb.co/5hZxp7d/adult-blur-blurred-background-687824.png",
+        "icon": "fas fa-bus"
+    },
+    {
+        "id": 2,
+        "title": "A good Auto Responder",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nemo pariatur assumenda architecto explicabo?",
+        "photo": "https://i.ibb.co/cYVHTjN/chef-cook-food-33614.png",
+        "icon": "fas fa-bell"
+    },
+    {
+        "id": 3,
+        "title": "Home Delivery",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nemo pariatur assumenda architecto explicabo?",
+        "photo": "https://i.ibb.co/gmw7Tmw/architecture-building-city-2047397.png",
+        "icon": "fas fa-truck"
+    }
+]
