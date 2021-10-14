@@ -1,0 +1,9 @@
+.food-item{
+    border: none !important;
+    padding: 15px;
+    transition: 0.6s;
+}
+.food-item:hover{
+    border-radius: 30px;
+    box-shadow: 2px 5px 5px 5px rgb(223, 217, 217);
+}

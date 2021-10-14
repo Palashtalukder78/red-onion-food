@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "category": "breakfast",
+        "name": "Healthy Meal Plan",
+        "description": "This food are really for your good Health",
+        "photo": "https://i.ibb.co/4MdMncg/breakfast5.png",
+        "price": 6
+    },
+    {
+        "id": 2,
+        "category": "breakfast",
+        "name": "Healthy Meal Plan",
+        "description": "This food are really for your good Health",
+        "photo": "https://i.ibb.co/23nWr1r/breakfast4.png",
+        "price": 6
+    },
+    {
+        "id": 3,
+        "category": "breakfast",
+        "name": "Healthy Meal Plan",
+        "description": "This food are really for your good Health",
+        "photo": "https://i.ibb.co/8Dk3dkL/breakfast2.png",
+        "price": 6
+    },
+    {
+        "id": 4,
+        "category": "breakfast",
+        "name": "Healthy Meal Plan",
+        "description": "This food are really for your good Health",
+        "photo": "https://i.ibb.co/y4h8PCh/breakfast3.png",
+        "price": 6
+    },
+    {
+        "id": 5,
+        "category": "breakfast",
+        "name": "Healthy Meal Plan",
+        "description": "This food are really for your good Health",
+        "photo": "https://i.ibb.co/yhm3g7k/breakfast1.png",
+        "price": 6
+    },
+    {
+        "id": 6,
+        "category": "breakfast",
+        "name": "Healthy Meal Plan",
+        "description": "This food are really for your good Health",
+        "photo": "https://i.ibb.co/Tcbm9J1/breakfast6.png",
+        "price": 6
+    }
+]
