@@ -1,0 +1,21 @@
+.menu{
+    text-decoration: none;
+    margin-left: 16px;
+    color: black;
+}
+.login{
+    background-color:red;
+    color: cornsilk;
+    padding: 5px 20px;
+    border-radius: 18px;
+    font-size: 13px;
+}
+.logo{
+    width: 15%; 
+    padding: 5px;
+}
+@media only screen and (max-width: 992px)  {
+    .logo{
+        width: 35%; 
+    }
+}
