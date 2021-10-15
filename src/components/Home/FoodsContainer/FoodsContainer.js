@@ -29,6 +29,9 @@ const FoodsContainer = () => {
                         <Route exact path="/">
                             <Breakfast></Breakfast>
                         </Route>
+                        <Route exact path="/home">
+                            <Breakfast></Breakfast>
+                        </Route>
                         <Route path="/breakfast">
                             <Breakfast></Breakfast>
                         </Route>

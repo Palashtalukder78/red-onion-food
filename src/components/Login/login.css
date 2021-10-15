@@ -1,0 +1,31 @@
+#login{
+    background-image: url('../../images/bannerbackground.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+}
+#login .input-box{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(235, 227, 227);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.checkbox{
+    width: 70%;
+    margin: auto;
+}
+#login button{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    margin-top: 5px;
+    background-color: tomato;
+}
+#login p:hover{
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5s;
+}
