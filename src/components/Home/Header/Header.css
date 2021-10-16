@@ -14,6 +14,9 @@
     width: 15%; 
     padding: 5px;
 }
+.header-icon{
+    font-size: 18px;
+}
 @media only screen and (max-width: 992px)  {
     .logo{
         width: 35%; 

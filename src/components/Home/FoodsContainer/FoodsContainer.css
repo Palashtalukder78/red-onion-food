@@ -2,7 +2,6 @@
     height: 100%;
 }
 .foods-category{
-    /* height: 40px; */
     margin: 20px 0;
 }
 .foods-category button{
@@ -13,13 +12,12 @@
 .foods-category button:hover{
     border-bottom: 2px solid #000;
 }
-
 .category-menu{
     text-decoration: none;
     margin: 0 10px;
     color: #000;
     font-size: 18px;
 }
-.category-menu:hover{
-    text-decoration: underline;
+.Category-button {
+    height: 50px;
 }

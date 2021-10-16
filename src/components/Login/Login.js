@@ -4,15 +4,14 @@ import { Container } from 'react-bootstrap';
 import './login.css';
 import logo from '../../images/logo.png'
 import { Checkbox, FormControlLabel, Snackbar } from '@mui/material';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 const Login = () => {
-    const { createUser, loginUser } = useFirebase();
-
+    const { createUser, loginUser } = useAuth();
     const [istoggle, setIstoggle] = useState(false);
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
     // Set Notify for Error start
     const [open, setOpen] = React.useState(false);
     const handleClose = (event, reason) => {
@@ -25,6 +24,9 @@ const Login = () => {
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
+    }
+    const handleName = (e) => {
+        setName(e.target.value);
     }
     const handlePassword = (e) => {
         setPassword(e.target.value);
@@ -39,17 +41,16 @@ const Login = () => {
             setOpen(true);
         }
         !istoggle ?
-            handleCreateUser(email, password)
+            handleCreateUser(email, password, name)
             :
             handleLogedinUser(email, password)
     }
-    const handleCreateUser = (email, password) => {
-        createUser(email, password)
+    const handleCreateUser = (email, password, name) => {
+        createUser(email, password, name);
     }
     const handleLogedinUser = (email, password) => {
         loginUser(email, password)
     }
-
     return (
         <div id="login">
             <Container>
@@ -62,7 +63,7 @@ const Login = () => {
                             <form onSubmit={handelLogin}>
                                 <div className="text-center">
                                     {!istoggle &&
-                                        <input className="input-box" type="text" placeholder="Enter Your Name" />}
+                                        <input className="input-box" type="text" placeholder="Enter Your Name" onBlur={handleName} />}
 
                                     <input className="input-box" type="text" placeholder="Enter Email" onBlur={handleEmail} />
                                     <input className="input-box" type="password" placeholder="Enter Password" onBlur={handlePassword} />

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Footer.css'
 const Footer = () => {
+    const { user } = useAuth();
     return (
         <>
             <div id="footer" className="bg-dark text-light py-4">
@@ -18,10 +20,12 @@ const Footer = () => {
                                 fontWeight: "bold",
                                 color: "white"
                             }} to="/home">Home</NavLink>
-                            <NavLink className="footer-menu" activeStyle={{
-                                fontWeight: "bold",
-                                color: "white"
-                            }} to="/login">Login</NavLink>
+                            {!user &&
+                                <NavLink className="footer-menu" activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "white"
+                                }} to="/login">Login</NavLink>
+                            }
                         </div>
                         <div className="col-md-4">
                             <h3>Contact Us</h3>

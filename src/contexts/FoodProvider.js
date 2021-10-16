@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+/* import React, { createContext } from 'react';
 import useFood from '../hooks/useFood';
 const FoodContext = createContext();
 
@@ -11,4 +11,4 @@ const FoodProvider = ({ children }) => {
     );
 };
 
-export default FoodProvider;
+export default FoodProvider; */

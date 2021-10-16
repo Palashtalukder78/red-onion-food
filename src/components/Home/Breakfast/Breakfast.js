@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { Container, Spinner } from 'react-bootstrap';
 import useFood from '../../../hooks/useFood';
 import Food from '../Food/Food';
@@ -24,4 +24,4 @@ const Breakfast = () => {
     );
 };
 
-export default Breakfast;
+export default Breakfast; */

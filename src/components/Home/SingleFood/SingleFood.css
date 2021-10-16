@@ -1,0 +1,32 @@
+.product-price{
+    display: flex;
+    align-items: center;
+}
+.product-count{
+    border: 2px solid gray;
+    margin-left: 10px;
+    border-radius: 17px;
+}
+.product-count span{
+    font-size: 20px;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+.product-count .button{
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+.product-count .button:hover{
+    background-color: gray;
+    color: #ffffff;
+}
+.add-cart{
+    background-color: rgb(221, 23, 23);
+    border-radius: 30px;
+    margin: 20px 0;
+    border: none;
+    padding: 5px 20px;
+    color: #ffffff;
+}

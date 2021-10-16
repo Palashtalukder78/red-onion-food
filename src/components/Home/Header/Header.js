@@ -1,12 +1,13 @@
+import { Badge } from '@mui/material';
 import React from 'react';
 import { Container, Nav, Navbar, Stack } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo.png';
 import './Header.css'
 
 const Header = () => {
-    const { user, logOut } = useFirebase();
+    const { user, logOut } = useAuth();
     return (
         <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
@@ -23,7 +24,17 @@ const Header = () => {
                                 fontWeight: "bold",
                                 color: "black"
                             }} to="/cart">
-                                <i className="fas fa-cart-plus"></i>
+
+                                {/* <IconButton aria-label="cart">
+                                    <StyledBadge badgeContent={4} color="secondary">
+                                        <ShoppingCartIcon />
+                                    </StyledBadge>
+                                </IconButton> */}
+
+                                <Badge badgeContent={4} color="secondary">
+                                    <i className="fas fa-cart-plus header-icon"></i>
+                                </Badge>
+
                             </NavLink>
                             <NavLink className="menu" activeStyle={{
                                 fontWeight: "bold",
@@ -38,7 +49,7 @@ const Header = () => {
                                 </NavLink>
                             }
                             <span>
-                                {user.email}
+                                {user?.displayName ? user.displayName : user.email}
                             </span>
                             {user?.email &&
                                 <NavLink className="menu" activeStyle={{
@@ -47,9 +58,6 @@ const Header = () => {
                                     <span onClick={logOut} className="login">Signout</span>
                                 </NavLink>
                             }
-                            {/* {user?.email &&
-                                <button onClick={logOut} className="login">Signout</button>
-                            } */}
                         </Stack>
                     </Nav>
                 </Navbar.Collapse>

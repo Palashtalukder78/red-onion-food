@@ -1,4 +1,4 @@
-import { Container, Spinner } from 'react-bootstrap';
+/* import { Container, Spinner } from 'react-bootstrap';
 import useFood from '../../../hooks/useFood';
 import Food from '../Food/Food';
 
@@ -24,4 +24,4 @@ const Launch = () => {
     );
 };
 
-export default Launch;
+export default Launch; */

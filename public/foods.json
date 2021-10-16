@@ -2,66 +2,74 @@
     {
         "id": 1,
         "category": "breakfast",
-        "name": "Healthy Meal Plan",
+        "name": "Bagel and cream cheese",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/4MdMncg/breakfast5.png",
-        "price": 6
+        "price": 20,
+        "longdescription": "Breakfast is often called 'the most important meal of the day', and for good reason. As the name suggests, breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health."
     },
     {
         "id": 2,
         "category": "breakfast",
-        "name": "Healthy Meal Plan",
+        "name": "Breakfast sandwich",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/23nWr1r/breakfast4.png",
-        "price": 6
+        "price": 23,
+        "longdescription": "Breakfast is often called 'the most important meal of the day', and for good reason. As the name suggests, breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health."
     },
     {
         "id": 3,
         "category": "breakfast",
-        "name": "Healthy Meal Plan",
+        "name": "Baked chicken",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/8Dk3dkL/breakfast2.png",
-        "price": 6
+        "price": 25,
+        "longdescription": "Breakfast is often called 'the most important meal of the day', and for good reason. As the name suggests, breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health."
     },
     {
         "id": 4,
         "category": "breakfast",
-        "name": "Healthy Meal Plan",
+        "name": "Eggs Benidict",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/y4h8PCh/breakfast3.png",
-        "price": 6
+        "price": 17,
+        "longdescription": "Breakfast is often called 'the most important meal of the day', and for good reason. As the name suggests, breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health."
     },
     {
         "id": 5,
         "category": "breakfast",
-        "name": "Healthy Meal Plan",
+        "name": "Full breakfast fried egg",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/yhm3g7k/breakfast1.png",
-        "price": 6
+        "price": 11,
+        "longdescription": "Breakfast is often called 'the most important meal of the day', and for good reason. As the name suggests, breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health."
     },
     {
         "id": 6,
         "category": "breakfast",
-        "name": "Healthy Meal Plan",
+        "name": "Toast chiken",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/Tcbm9J1/breakfast6.png",
-        "price": 6
+        "price": 19,
+        "longdescription": "Breakfast is often called 'the most important meal of the day', and for good reason. As the name suggests, breakfast breaks the overnight fasting period. It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health."
     },
     {
         "id": 7,
         "category": "dinner",
-        "name": "Dinner 1",
+        "name": "Salmon with grapfruit",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/T8K5Ykt/dinner6.png",
-        "price": 6
+        "price": 32,
+        "longdescription": "Sitting down for a nightly meal keeps kids healthy, alert and in touch.” Dinner creates a daily connection – In our fast moving society, families may never have a chance to just sit and talk unless they make one. ... Dinners keep kids healthy – A warm receptive atmosphere at mealtime does a lot for kids' health."
     },
     {
         "id": 8,
         "category": "dinner",
-        "name": "Dinner 2",
+        "name": "Lemony salmon",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/YP4W3ds/dinner5.png",
-        "price": 6
+        "price": 36,
+        "longdescription": "Sitting down for a nightly meal keeps kids healthy, alert and in touch.” Dinner creates a daily connection – In our fast moving society, families may never have a chance to just sit and talk unless they make one. ... Dinners keep kids healthy – A warm receptive atmosphere at mealtime does a lot for kids' health."
     },
     {
         "id": 9,
@@ -69,23 +77,27 @@
         "name": "Dinner 3",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/ZNNMHMM/dinner4.png",
-        "price": 6
+        "price": 36,
+        "longdescription": "Sitting down for a nightly meal keeps kids healthy, alert and in touch.” Dinner creates a daily connection – In our fast moving society, families may never have a chance to just sit and talk unless they make one. ... Dinners keep kids healthy – A warm receptive atmosphere at mealtime does a lot for kids' health."
     },
     {
         "id": 10,
         "category": "dinner",
-        "name": "Dinner 4",
+        "name": "Pork tenderlion",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/0QjgYHB/dinner3.png",
-        "price": 6
+        "price": 40,
+        "longdescription": "Sitting down for a nightly meal keeps kids healthy, alert and in touch.” Dinner creates a daily connection – In our fast moving society, families may never have a chance to just sit and talk unless they make one. ... Dinners keep kids healthy – A warm receptive atmosphere at mealtime does a lot for kids' health."
     },
     {
         "id": 11,
         "category": "dinner",
-        "name": "Dinner 5",
+        "name": "Gerlic butter",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/4KCxdxN/dinner1.png",
-        "price": 6
+        "price": 66,
+        "longdescription": "Sitting down for a nightly meal keeps kids healthy, alert and in touch.” Dinner creates a daily connection – In our fast moving society, families may never have a chance to just sit and talk unless they make one. ... Dinners keep kids healthy – A warm receptive atmosphere at mealtime does a lot for kids' health."
+
     },
     {
         "id": 12,
@@ -93,15 +105,17 @@
         "name": "Dinner 6",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/nDKbZ1x/dinner2.png",
-        "price": 6
+        "price": 46,
+        "longdescription": "Sitting down for a nightly meal keeps kids healthy, alert and in touch.” Dinner creates a daily connection – In our fast moving society, families may never have a chance to just sit and talk unless they make one. ... Dinners keep kids healthy – A warm receptive atmosphere at mealtime does a lot for kids' health."
     },
     {
         "id": 13,
         "category": "launch",
-        "name": "launch 1",
+        "name": "Healthy Meal Plan",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/nDKbZ1x/dinner2.png",
-        "price": 6
+        "price": 26,
+        "longdescription": "A launch is an open motorboat. The forward part of the launch’s deck may be covered. Prior to the era of engines on small craft, a launch was the largest boat carried on a sailing vessel, powered by sail or by oars. In competitive rowing, a launch is a motorized boat used by the coach during training."
     },
     {
         "id": 14,
@@ -109,6 +123,7 @@
         "name": "launch 2",
         "description": "This food are really for your good Health",
         "photo": "https://i.ibb.co/nDKbZ1x/dinner2.png",
-        "price": 6
+        "price": 33,
+        "longdescription": "A launch is an open motorboat. The forward part of the launch’s deck may be covered. Prior to the era of engines on small craft, a launch was the largest boat carried on a sailing vessel, powered by sail or by oars. In competitive rowing, a launch is a motorized boat used by the coach during training."
     }
 ]
