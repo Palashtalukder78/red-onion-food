@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar, Stack } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 import logo from '../../../images/logo.png';
 import './Header.css'
 
 const Header = () => {
+    const { user, logOut } = useFirebase();
     return (
         <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
@@ -28,50 +30,31 @@ const Header = () => {
                                 color: "black"
                             }} to="/home">Home
                             </NavLink>
-                            <NavLink className="menu" activeStyle={{
-                                fontWeight: "bold",
-                                color: "black"
-                            }} to="/login">
-                                <span className="login">Login</span>
-                            </NavLink>
+                            {!user?.email &&
+                                <NavLink className="menu" activeStyle={{
+                                    color: "black"
+                                }} to="/login">
+                                    <span className="login">Login</span>
+                                </NavLink>
+                            }
+                            <span>
+                                {user.email}
+                            </span>
+                            {user?.email &&
+                                <NavLink className="menu" activeStyle={{
+                                    color: "black"
+                                }} to="/">
+                                    <span onClick={logOut} className="login">Signout</span>
+                                </NavLink>
+                            }
+                            {/* {user?.email &&
+                                <button onClick={logOut} className="login">Signout</button>
+                            } */}
                         </Stack>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar >
-
-        /* <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
-            <Container>
-                <Navbar.Brand href="#home">
-                    <img className="img-fluid" style={{ width: "20%" }} src={logo} alt="" />
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Stack direction="horizontal" gap={3}>
-                            <NavLink className="menu" activeStyle={{
-                                fontWeight: "bold",
-                                color: "black"
-                            }} to="/cart">
-                                <i className="fas fa-cart-plus"></i>
-                            </NavLink>
-
-                            <NavLink className="menu" activeStyle={{
-                                fontWeight: "bold",
-                                color: "black"
-                            }} to="/home">Home
-                            </NavLink>
-                            <NavLink className="menu" activeStyle={{
-                                fontWeight: "bold",
-                                color: "black"
-                            }} to="/login">
-                                <span className="login">Login</span>
-                            </NavLink>
-                        </Stack>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar> */
     );
 };
 

@@ -4,8 +4,10 @@ import { Container } from 'react-bootstrap';
 import './login.css';
 import logo from '../../images/logo.png'
 import { Checkbox, FormControlLabel, Snackbar } from '@mui/material';
-
+import useFirebase from '../../hooks/useFirebase';
 const Login = () => {
+    const { createUser, loginUser } = useFirebase();
+
     const [istoggle, setIstoggle] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,7 +27,7 @@ const Login = () => {
         setEmail(e.target.value);
     }
     const handlePassword = (e) => {
-        console.log(e.target.value);
+        setPassword(e.target.value);
     }
     const handleToggle = (e) => {
         setIstoggle(e.target.checked);
@@ -36,6 +38,16 @@ const Login = () => {
             setError("Password should be 6 Character");
             setOpen(true);
         }
+        !istoggle ?
+            handleCreateUser(email, password)
+            :
+            handleLogedinUser(email, password)
+    }
+    const handleCreateUser = (email, password) => {
+        createUser(email, password)
+    }
+    const handleLogedinUser = (email, password) => {
+        loginUser(email, password)
     }
 
     return (
@@ -55,7 +67,7 @@ const Login = () => {
                                     <input className="input-box" type="text" placeholder="Enter Email" onBlur={handleEmail} />
                                     <input className="input-box" type="password" placeholder="Enter Password" onBlur={handlePassword} />
                                     <div className="d-grid ">
-                                        <button className="btn mx-auto text-light">{istoggle ? "Sign in" : "Sign up"}</button>
+                                        <button type="submit" className="btn mx-auto text-light">{istoggle ? "Sign in" : "Sign up"}</button>
                                     </div>
                                 </div>
                                 <div className="flexible checkbox">
