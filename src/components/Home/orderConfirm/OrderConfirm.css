@@ -15,3 +15,11 @@
     display: flex;
     align-items: center;
 }
+.confirm-order{
+    width: 60%;
+    margin: auto;
+}
+.confirm-order button{
+    border-radius: 30px;
+    margin-top: 10px;
+}

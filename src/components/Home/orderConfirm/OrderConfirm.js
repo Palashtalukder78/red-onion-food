@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import deliveryman from '../../../images/delivery.png';
 import deliverymanlogo from '../../../images/Group 1152.png';
@@ -7,8 +8,15 @@ import deliverymanlogo from '../../../images/Group 1152.png';
 import './OrderConfirm.css';
 const OrderConfirm = () => {
     const { shippingContext } = useAuth();
+    const { cartContext } = useAuth();
+    const [cart, setCart] = cartContext;
     const [userInfo] = shippingContext;
+    const history = useHistory();
     console.log(userInfo);
+    const orderConfirm = () => {
+        setCart({})
+        history.push('/')
+    }
     return (
         <Container>
             <div className="row my-4">
@@ -26,9 +34,13 @@ const OrderConfirm = () => {
                             <span className="text-muted">{userInfo.address}</span>
                             <br />
                             <br />
-                            <span>Email Address:</span>
-                            <br />
-                            <span className="text-muted">{userInfo?.email}</span>
+                            {userInfo?.email &&
+                                <div>
+                                    <span>Email Address:</span>
+                                    <br />
+                                    <span className="text-muted">{userInfo?.email}</span>
+                                </div>
+                            }
                         </div>
                         <div className="my-2">
                             <h3 >09:30pm</h3>
@@ -45,6 +57,10 @@ const OrderConfirm = () => {
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                    <div className="d-grid mt-1 confirm-order">
+                        <button onClick={orderConfirm} type="submit" className="saveAndContinue btn-lg text-light" >Confirm Order</button>
                     </div>
                 </div>
             </div>
