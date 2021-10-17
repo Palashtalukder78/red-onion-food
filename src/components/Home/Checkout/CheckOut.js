@@ -1,13 +1,55 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 import CartItem from '../CartItem/CartItem';
 import './CheckOut.css';
 
+import { useState } from 'react';
+import { useHistory } from 'react-router';
+
 const CheckOut = () => {
     const { cartContext } = useAuth();
     const [cart, setCart] = cartContext;
+    const { firebaseContext } = useAuth();
+    const { user } = firebaseContext;
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
+    const [phone, setPhone] = useState('');
+    const [success, setSuccess] = useState(false);
+    const { shippingContext } = useAuth();
+    const [userInfo, setUserInfo] = shippingContext;
 
+    const history = useHistory();
+    const handleShippingInfo = (e) => {
+        e.preventDefault();
+        setUserInfo({
+            fullName: fullName,
+            email: email,
+            address: address,
+            phone: phone,
+            save: true
+        });
+        setSuccess(true)
+        console.log(userInfo)
+    }
+
+    const handleName = (e) => {
+        setFullName(e.target.value);
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+    const handleAddress = (e) => {
+        setAddress(e.target.value);
+    }
+    const handlePhoneNumber = (e) => {
+        setPhone(e.target.value);
+    }
+    const handlePlaceOrder = () => {
+        history.push('/order-confirm');
+    }
     let subTotal = 0;
     for (const item of cart) {
         subTotal = subTotal + (item.price * item.quantity);
@@ -25,8 +67,18 @@ const CheckOut = () => {
             <Container>
                 <div className="row py-5">
                     <div className="col-md-6">
-                        <div>
-                            <form>
+                        <div className="checkout-form">
+                            <form onSubmit={handleShippingInfo}>
+                                <input onBlur={handleName} className="input-box" defaultValue={user.displayName} placeholder="Full name" required />
+                                <input onBlur={handleEmail} type="email" className="input-box" defaultValue={user?.email} required />
+                                <input onBlur={handleAddress} className="input-box" placeholder="Shipping Address" required />
+                                <input onBlur={handlePhoneNumber} type="number" className="input-box" placeholder="Phone Number" required />
+
+                                {!success &&
+                                    <div className="d-grid mt-1">
+                                        <button type="submit" className="saveAndContinue btn-lg text-light" >Save & Continue</button>
+                                    </div>
+                                }
 
                             </form>
                         </div>
@@ -57,6 +109,11 @@ const CheckOut = () => {
                                 <h6> <b>$ {total}</b> </h6>
                             </div>
                         </div>
+                        {success &&
+                            <div className="d-grid mt-1 placeOrder">
+                                <button onClick={handlePlaceOrder} className="saveAndContinue btn-lg text-light">Place Order</button>
+                            </div>
+                        }
                     </div>
                 </div>
             </Container>

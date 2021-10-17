@@ -4,6 +4,7 @@ import CheckOut from './components/Home/Checkout/CheckOut';
 import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
+import OrderConfirm from './components/Home/orderConfirm/OrderConfirm';
 import SingleFood from './components/Home/SingleFood/SingleFood';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <PrivateRoute path="/checkout">
             <CheckOut></CheckOut>
+          </PrivateRoute>
+          <PrivateRoute path="/order-confirm">
+            <OrderConfirm></OrderConfirm>
           </PrivateRoute>
         </Switch>
         <Footer />

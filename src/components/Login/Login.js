@@ -19,6 +19,7 @@ const Login = () => {
 
     const location = useLocation();
     const history = useHistory();
+
     // Set Notify for Error start
     const [open, setOpen] = React.useState(false);
     const handleClose = (event, reason) => {

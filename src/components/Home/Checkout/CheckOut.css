@@ -17,3 +17,23 @@
     display: flex;
     justify-content: space-between;
 }
+.checkout-form{
+    width: 70%;
+    margin: auto;
+}
+.checkout-form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(235, 227, 227);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.saveAndContinue{
+    background-color: rgb(233, 27, 27);
+    border: none;
+}
+.placeOrder{
+    width: 60%;
+    margin: auto;
+}
