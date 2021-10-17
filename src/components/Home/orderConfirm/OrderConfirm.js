@@ -15,7 +15,7 @@ const OrderConfirm = () => {
     console.log(userInfo);
     const orderConfirm = () => {
         setCart({})
-        history.push('/')
+        history.push('/congratulation')
     }
     return (
         <Container>

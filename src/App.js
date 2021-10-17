@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import CheckOut from './components/Home/Checkout/CheckOut';
+import Congratulate from './components/Home/Congratulate/Congratulate';
 import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
@@ -33,6 +34,12 @@ function App() {
           <PrivateRoute path="/order-confirm">
             <OrderConfirm></OrderConfirm>
           </PrivateRoute>
+          <PrivateRoute path="/congratulation">
+            <Congratulate></Congratulate>
+          </PrivateRoute>
+          <Route path="*">
+            <Congratulate></Congratulate>
+          </Route>
         </Switch>
         <Footer />
       </Router>
