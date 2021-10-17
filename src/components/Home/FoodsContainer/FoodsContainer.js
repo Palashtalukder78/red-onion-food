@@ -3,6 +3,7 @@ import { Container, Button } from 'react-bootstrap';
 import './FoodsContainer.css';
 import useFood from '../../../hooks/useFood';
 import Food from '../Food/Food';
+import { NavLink } from 'react-router-dom';
 
 const FoodsContainer = () => {
     const { foods } = useFood();
@@ -44,7 +45,9 @@ const FoodsContainer = () => {
                     }
                 </div>
                 <div className="text-center">
-                    <Button variant="secondary">Checkout Your Foods</Button>
+                    <NavLink to="/checkout">
+                        <Button variant="secondary">Checkout Your Foods</Button>
+                    </NavLink>
                 </div>
             </Container>
         </div>

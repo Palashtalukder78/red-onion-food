@@ -1,0 +1,19 @@
+.checkout{
+    background-color: rgba(231, 248, 201, 0.336);
+}
+.cart-product{
+    width: 60%;
+    background-color: rgba(224, 224, 233, 0.596);
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+.calculation{
+    width: 60%;
+    background-color: rgba(224, 224, 233, 0.596);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}

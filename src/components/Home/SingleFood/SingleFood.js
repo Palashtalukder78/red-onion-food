@@ -2,17 +2,17 @@ import React from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import useCart from '../../../hooks/useCart';
+import useAuth from '../../../hooks/useAuth';
 import useFood from '../../../hooks/useFood';
 import './SingleFood.css'
 
 const SingleFood = () => {
     const { id } = useParams();
     const { foods } = useFood();
-    const { cart, setCart } = useCart();
-    const selectedFood = foods?.find(food => food.id == id);
-
+    const { cartContext } = useAuth();
+    const [cart, setCart] = cartContext;
     const [quantity, setQuantity] = useState(1);
+    const selectedFood = foods?.find(food => food.id == id);
 
     const handleIncrease = () => {
         const totalQuantity = quantity + 1;
@@ -24,10 +24,12 @@ const SingleFood = () => {
             setQuantity(totalQuantity);
         }
     }
+    console.log("old Cart", cart);
     const handleAddtoCart = (item) => {
         item.quantity = quantity;
         const newCart = [...cart, item];
         setCart(newCart);
+        console.log("new Cart", newCart);
     }
     return (
         <div className="container my-5">
@@ -47,8 +49,8 @@ const SingleFood = () => {
                     </div>
                     <div>
                         <button onClick={() => handleAddtoCart(selectedFood)} className="add-cart"> <i className="fas fa-cart-plus"></i> Add cart</button>
-                        <NavLink to="/checkout">
-                            <button onClick={() => handleAddtoCart(selectedFood)} className="add-cart">CheckOut</button>
+                        <NavLink to="/">
+                            <button className="add-cart">Back</button>
                         </NavLink>
                     </div>
                 </div>

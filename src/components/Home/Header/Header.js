@@ -7,7 +7,10 @@ import logo from '../../../images/logo.png';
 import './Header.css'
 
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { firebaseContext } = useAuth();
+    const { user, logOut } = firebaseContext;
+    const { cartContext } = useAuth();
+    const [cart] = cartContext;
     return (
         <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
@@ -23,15 +26,8 @@ const Header = () => {
                             <NavLink className="menu" activeStyle={{
                                 fontWeight: "bold",
                                 color: "black"
-                            }} to="/cart">
-
-                                {/* <IconButton aria-label="cart">
-                                    <StyledBadge badgeContent={4} color="secondary">
-                                        <ShoppingCartIcon />
-                                    </StyledBadge>
-                                </IconButton> */}
-
-                                <Badge badgeContent={4} color="secondary">
+                            }} to="/checkout">
+                                <Badge badgeContent={cart.length} color="secondary">
                                     <i className="fas fa-cart-plus header-icon"></i>
                                 </Badge>
 

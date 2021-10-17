@@ -4,12 +4,10 @@ import useFirebase from '../hooks/useFirebase';
 
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
-    const allContext = useFirebase();
-    const allCart = useCart();
-    /* const [user, createUser, loginUser, setUserName, logOut] = useFirebase();
-    const [cart, setCart] = useCart(); */
+    const firebaseContext = useFirebase();
+    const cartContext = useCart();
     return (
-        <AuthContext.Provider value={allContext}>
+        <AuthContext.Provider value={{ firebaseContext, cartContext }}>
             {children}
         </AuthContext.Provider>
     );

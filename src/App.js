@@ -6,11 +6,11 @@ import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
 import SingleFood from './components/Home/SingleFood/SingleFood';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './contexts/AuthProvider';
 function App() {
   return (
     <AuthProvider>
-      {/* <FoodProvider> */}
       <Router>
         <Header />
         <Switch>
@@ -26,13 +26,12 @@ function App() {
           <Route path="/food/:id">
             <SingleFood></SingleFood>
           </Route>
-          <Route path="/Checkout">
+          <PrivateRoute path="/checkout">
             <CheckOut></CheckOut>
-          </Route>
+          </PrivateRoute>
         </Switch>
         <Footer />
       </Router>
-      {/* </FoodProvider> */}
     </AuthProvider>
   );
 }

@@ -5,13 +5,20 @@ import './login.css';
 import logo from '../../images/logo.png'
 import { Checkbox, FormControlLabel, Snackbar } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
+import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
 const Login = () => {
-    const { createUser, loginUser } = useAuth();
+    const { firebaseContext } = useAuth();
+    const { createUser, setUser } = firebaseContext;
     const [istoggle, setIstoggle] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    // const [user, setUser] = useAuth({});
+
+    const location = useLocation();
+    const history = useHistory();
     // Set Notify for Error start
     const [open, setOpen] = React.useState(false);
     const handleClose = (event, reason) => {
@@ -34,6 +41,8 @@ const Login = () => {
     const handleToggle = (e) => {
         setIstoggle(e.target.checked);
     }
+
+    const redirectUri = location.state?.from || '/home';
     const handelLogin = (e) => {
         e.preventDefault();
         if (password.length < 6) {
@@ -48,8 +57,17 @@ const Login = () => {
     const handleCreateUser = (email, password, name) => {
         createUser(email, password, name);
     }
+    const auth = getAuth();
     const handleLogedinUser = (email, password) => {
-        loginUser(email, password)
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                setUser(userCredential.user);
+                history.push(redirectUri);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
+
     }
     return (
         <div id="login">

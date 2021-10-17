@@ -9,7 +9,7 @@ const Services = ({ service }) => {
                 <img src={photo} alt="" />
                 <div className="card-body service">
                     <div className="service-icon text-center">
-                        <i class={icon}></i>
+                        <i className={icon}></i>
                     </div>
                     <div>
                         <h3>{title}</h3>
