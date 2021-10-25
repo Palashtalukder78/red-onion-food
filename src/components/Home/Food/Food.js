@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Food.css';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Food = ({ food }) => {
     const { id, name, description, photo, price } = food;
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
-        <div className="col-md-4">
+        <div className="col-md-4" data-aos="zoom-in-up" data-aos-delay="500">
             <div className="card food-item my-2">
                 <div className="card-body text-center">
                     <img style={{ width: "50%" }} className="img-fluid" src={photo} alt="" />

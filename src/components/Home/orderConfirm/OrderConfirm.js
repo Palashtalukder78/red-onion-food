@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import deliveryman from '../../../images/delivery.png';
 import deliverymanlogo from '../../../images/Group 1152.png';
-
+import swal from 'sweetalert';
 import './OrderConfirm.css';
 const OrderConfirm = () => {
     const { shippingContext } = useAuth();
@@ -15,7 +15,8 @@ const OrderConfirm = () => {
     console.log(userInfo);
     const orderConfirm = () => {
         setCart({})
-        history.push('/congratulation')
+        history.push('/congratulation');
+        swal("Good job!", "Order Sucessfully. We will delivery SOON", "success");
     }
     return (
         <Container>

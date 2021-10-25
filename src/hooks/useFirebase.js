@@ -2,7 +2,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import initializeAuthentication from "../firebase/Firebase.init";
-
+import swal from 'sweetalert';
 initializeAuthentication();
 const useFirebase = () => {
     const auth = getAuth();
@@ -11,7 +11,8 @@ const useFirebase = () => {
     const createUser = (email, password, name) => {
         createUserWithEmailAndPassword(auth, email, password, name)
             .then(userCredential => {
-                setUserName(name)
+                setUserName(name);
+                swal("Good job!", "Account Create successfully!", "success");
             })
             .catch(error => {
                 setError(error.message)
@@ -46,12 +47,11 @@ const useFirebase = () => {
         });
     }, [])
 
-
-
     const logOut = () => {
         signOut(auth).then(() => {
             console.log('Logout Successfully')
-            setUser({})
+            setUser({});
+            swal("Good job!", "Logout successfully!", "success");
         }).catch((error) => {
             console.log(error.message)
         });

@@ -7,6 +7,7 @@ import { Checkbox, FormControlLabel, Snackbar } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import { getAuth, signInWithEmailAndPassword } from '@firebase/auth';
+import swal from 'sweetalert';
 const Login = () => {
     const { firebaseContext } = useAuth();
     const { createUser, setUser } = firebaseContext;
@@ -64,6 +65,7 @@ const Login = () => {
             .then((userCredential) => {
                 setUser(userCredential.user);
                 history.push(redirectUri);
+                swal("Good job!", "Login successfully", "success");
             })
             .catch((error) => {
                 console.log(error.message);
@@ -99,8 +101,6 @@ const Login = () => {
                                         onChange={handleToggle}
                                     />
                                 </div>
-                                {istoggle &&
-                                    <p className="my-2 text-primary text-center">Reset Password</p>}
                             </form>
                         </div>
                     </div>

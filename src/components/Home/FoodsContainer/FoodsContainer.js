@@ -4,7 +4,8 @@ import './FoodsContainer.css';
 import useFood from '../../../hooks/useFood';
 import Food from '../Food/Food';
 import { NavLink } from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const FoodsContainer = () => {
     const { foods } = useFood();
     const [selectedFoods, setSelectedFoods] = useState([]);
@@ -13,7 +14,9 @@ const FoodsContainer = () => {
         const homeFoods = allFoods.filter(food => food.category === 'dinner')
         setSelectedFoods(homeFoods);
     }, [foods])
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const handleBreakfast = () => {
         const breakfast = foods.filter(food => food.category === 'breakfast');
         setSelectedFoods(breakfast)
@@ -27,7 +30,7 @@ const FoodsContainer = () => {
         setSelectedFoods(dinner)
     }
     return (
-        <div id="foodsContainer">
+        <div id="foodsContainer" data-aos="slide-right" data-aos-delay="500">
             <div className="foods-category text-center">
                 <div className="Category-button">
                     <button onClick={handleBreakfast}>Breakfast</button>

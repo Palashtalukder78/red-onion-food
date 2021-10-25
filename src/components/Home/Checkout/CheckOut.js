@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
@@ -7,7 +7,8 @@ import './CheckOut.css';
 
 import { useState } from 'react';
 import { useHistory } from 'react-router';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const CheckOut = () => {
     const { cartContext } = useAuth();
     const [cart, setCart] = cartContext;
@@ -32,7 +33,6 @@ const CheckOut = () => {
             save: true
         });
         setSuccess(true)
-        console.log(userInfo)
     }
 
     const handleName = (e) => {
@@ -62,11 +62,14 @@ const CheckOut = () => {
         deliveryCharge = 25;
     }
     const total = subTotal + deliveryCharge;
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <div className="checkout">
             <Container>
                 <div className="row py-5">
-                    <div className="col-md-6">
+                    <div className="col-md-6" data-aos="slide-up" data-aos-delay="500">
                         <div className="checkout-form">
                             <form onSubmit={handleShippingInfo}>
                                 <input onBlur={handleName} className="input-box" defaultValue={user.displayName} placeholder="Full name" required />
@@ -83,7 +86,7 @@ const CheckOut = () => {
                             </form>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6" data-aos="fade-down" data-aos-delay="500">
                         <div className="cart-product">
                             <span>From Savar <b>Hot Onion</b> Tangail</span>
                             <br />
